@@ -1,7 +1,7 @@
 import Title from "./title";
 import Button from "./button";
 import MainRecord from "./mainRecord";
-import { supabase } from "./lib/supabaseClient";
+// import { supabase } from "./lib/supabaseClient";
 
 export default async function Home() {
   // const { data, error } = await supabase.from('test').select('*')
