@@ -11,7 +11,7 @@ export default function MainRecord({ date }: Props) {
   const [futureTask, setFutureTask] = useState('');
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const today = new Date().toISOString().split("T")[0]; 
+  // const today = new Date().toISOString().split("T")[0];
   const dummyUserId = "12345678-1234-5678-1234-567812345678";
 
   //ページ読み込み時にデータ取得
@@ -21,7 +21,8 @@ export default function MainRecord({ date }: Props) {
         .from("daily_records")
         .select("*")
         .eq("user_id", dummyUserId)
-        .eq("date", date)
+        .eq("date", date
+        )
         .maybeSingle();
 
       if (data) {
@@ -54,11 +55,11 @@ export default function MainRecord({ date }: Props) {
       const { error } = await supabase.from("daily_records").upsert(
         {
           user_id: dummyUserId,
-          date: today,
+          date: date,
           study_note: studyNote,
           future_task: futureTask,
         },
-        { onConflict: "user_id,date" } // ← 重複時は更新
+        { onConflict: "user_id,date" } 
       );
 
       if (error) {
@@ -66,11 +67,12 @@ export default function MainRecord({ date }: Props) {
       } else {
         console.log("保存成功");
       }
-    }, 2000);
-  }, [studyNote, futureTask, today]);
+    }, 1000);
+  }, [studyNote, futureTask,date]);
 
   return (
     <>
+      <p>{date}</p>
       <div className="flex ml-4 mt-4">
         <div>
           <div className="mb-2 text-lg font-semibold">学習記録</div>
