@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Notionは多機能だが、学習を記録するだけならそこまでの機能は必要ないと考え、
+学習を記録するのに特化したアプリケーションがほしかったため作成した。
 
-## Getting Started
+学習記録をぱっと見で確認できるような開発を目指しています。
 
-First, run the development server:
+1. 要件定義
+- カレンダーを用いて、日付ごとの記録管理
+- 学習記録の記載（勉強した内容の大項目と詳細）
+- 次は何を学習するかの欄
+- データ保存（DB）
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. UI/UXの設計
+- Figmaで画面設計
+- シンプルさを意識
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. 技術選定
+- **Next.js（Reactベース）**
+    - ルーティングやビルド機能が揃っており、環境構築とデプロイが簡単なため
+    - Vercelとの連携により、公開が容易なため
+- **Tailwind CSS**
+    - コンポーネント単位でスタイルを完結でき、Reactとの相性が良いため
+    - 素早く整った見た目のUIが作れるため
+- **TypeScript**
+    - 型による補完で開発効率が上がるため
+    - コンポーネント間のデータ構造が明確になるため
+- **supabase**
+    - 学習コストが低く、容易にDB構築ができるため
+    - PostgreSQLを学習したかったため
+- **Vercel**
+    -Next.jsと相性がよく、デプロイが容易なため
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. デザインの方向性
+- モダンでシックな感じ（カッコよさ）
+- ダークテーマベースでシンプルなカラーリング
