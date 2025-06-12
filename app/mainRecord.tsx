@@ -72,7 +72,7 @@ export default function MainRecord({ date }: Props) {
 
   return (
     <>
-      <div className="flex ml-4 mt-4">
+      <div className="ml-4 mt-4">
         <div>
           <div className="mb-2 text-lg font-semibold">学習記録</div>
           <textarea
@@ -81,7 +81,7 @@ export default function MainRecord({ date }: Props) {
             className="outline-none w-150 h-40 bg-zinc-800 rounded-2xl p-4 resize-none overflow-auto hover:cursor-pointer hover:bg-white/30"
           ></textarea>
         </div>
-        <div className="ml-4">
+        <div className="">
           <div className="mb-2 text-lg font-semibold">今後の課題</div>
           <textarea
             value={futureTask}
