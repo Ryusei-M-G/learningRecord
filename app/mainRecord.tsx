@@ -72,7 +72,6 @@ export default function MainRecord({ date }: Props) {
 
   return (
     <>
-      <p>{date}</p>
       <div className="flex ml-4 mt-4">
         <div>
           <div className="mb-2 text-lg font-semibold">学習記録</div>
